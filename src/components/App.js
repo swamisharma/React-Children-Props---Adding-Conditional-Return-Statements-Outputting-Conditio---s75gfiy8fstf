@@ -1,18 +1,23 @@
-import React , {useState,useEffect} from 'react'
+import React , {useState} from 'react';
 import '../styles/App.css';
 import ChildComponent from './ChildComponent';
+
 const App = () => {
- //code here
+  const [inputValue, setInputValue] = useState(0);
+  const [outputValue, setOutputValue] = useState(0);
 
-  return (
+  const handleInputChange = (event) => {
+    const value = parseInt(event.target.value); 
+    setInputValue(value);
+    setOutputValue(value * value);
+  };
+ 
+ return (
     <div id="main">
-      <ChildComponent /> 
-       <input id='input' onChange={} />
-    
-      <p id='output'>{}</p>
+      <ChildComponent input={<input id='input' onChange={handleInputChange} />} />
+      <p id='output'>{outputValue}</p>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
