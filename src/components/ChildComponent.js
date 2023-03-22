@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ChildComponent({ input }) => {
+const ChildComponent = ({ input }) => {
   return (
     <div id="child">
       Find The Square <br/>
